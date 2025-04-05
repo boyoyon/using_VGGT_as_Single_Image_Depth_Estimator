@@ -41,7 +41,6 @@
             　・pip install scipy<br>
             　・pip install einops<br>
             　・pip install open3d<br>
-
         </p>
         <h2>使い方</h2>
         <p>
