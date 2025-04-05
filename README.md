@@ -1,7 +1,6 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8" />
-        <title>VGGT as Single Image Depth Estimator</title>
     </head>
     <body>
         <h1><center>VGGT を単一画像深度推定器として使う</center></h1>
