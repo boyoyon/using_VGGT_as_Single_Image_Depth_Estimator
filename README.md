@@ -61,5 +61,31 @@
                 　●RGB画像, 深度画像から3D表示する<br>
                 　　python o3d_rgb_depth_to_pcd.py (RGB画像) (深度画像) [(zスケール:省略可)]
         </p>
+         <h2>その他</h2>
+        <p>
+            背景(単色エリア?)が飛び出してくる問題がある。
+            <img src="images/fail.gif">
+        </p>
+        <p>
+            この場合、青が飛び出してくるので、blueの輝度が200以上だったらdepthを最大にする(一番奥に引っ込める)<br>
+            という場当たり的な対策をすると<br>
+            <br>
+            import cv2<br>
+            TH = 200<br>
+            MAX_VALUE = 65535 <br>
+            img =cv2.imread("rgb_image.png")<br>
+            H, W = img.shape[:2]<br>
+            depth = cv2.imread("deprg_image.png", cv2.IMREAD_UNCHANGED)<br>
+            for y in range(H):<br>
+            　for x in range(W):<br>
+            　　b = img[y][x][0]<br>
+            　　if b > TH:<br>
+            　　　depth[y][x] = MAX_VALUE<br>
+            cv2.imwrite("modified_depth.png", depth)<br>
+        </p>
+        <p>
+            こんな感じになる。
+            <img src="images/modified.gif">
+        </p>
     </body>
 </html>
