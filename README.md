@@ -75,7 +75,7 @@
             MAX_VALUE = 65535 <br>
             img =cv2.imread("rgb_image.png")<br>
             H, W = img.shape[:2]<br>
-            depth = cv2.imread("deprg_image.png", cv2.IMREAD_UNCHANGED)<br>
+            depth = cv2.imread("depth_image.png", cv2.IMREAD_UNCHANGED)<br>
             for y in range(H):<br>
             　for x in range(W):<br>
             　　b = img[y][x][0]<br>
